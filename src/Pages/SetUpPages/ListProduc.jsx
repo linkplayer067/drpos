@@ -7,6 +7,7 @@ import { FaPlus } from "react-icons/fa6";
 import MyEditor from "../../Components/ProductsTabps/ProductCatalog";
 import ActiveLog from "./ActiveLog";
 import StockLevel from "../../Components/ProductsTabps/StockLevel";
+import Taxes from "../../Components/ProductsTabps/ProductTaxes";
 
 const ListProduc = ({ isOpen }) => {
   const [activeTab, setActiveTab] = useState("General");
@@ -52,7 +53,9 @@ const [formData, setFormData] = useState({
   return (
     <div>
       <div
-        className={` relative flex min-h-screen ${isOpen ? "fixed right-10" : "right-0"}`}
+        className={` relative flex min-h-screen ${
+          isOpen ? "fixed right-10" : "right-0"
+        }`}
       >
         <div
           className={`transition-all mt-10  duration-300 bg-white p-6 shadow-2xl flex-grow 
@@ -212,12 +215,12 @@ const [formData, setFormData] = useState({
               handleChange={handleChange}
             />
             {/* Stock Level Tab */}
-            <StockLevel activeTab={activeTab}/>
+            <StockLevel activeTab={activeTab} />
             {/* Product Variant Tab */}
             {activeTab === "Product Variant" && showVariantTab && (
               <div>Product Variant Content</div>
             )}
-            {activeTab === "Taxes" && <div>Taxes Content</div>}
+            <Taxes activeTab={activeTab} />
 
             {/* Submit Button */}
             <div className=" flex items-center gap-6 justify-end border-t-2 pt-8 mt-12">
@@ -236,7 +239,7 @@ const [formData, setFormData] = useState({
           </form>
         </div>
       </div>
-        <ActiveLog isOpen={isOpen}/>
+      <ActiveLog isOpen={isOpen} />
     </div>
   );
 };
