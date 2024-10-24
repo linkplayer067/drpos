@@ -1,13 +1,11 @@
 import React, { useState } from 'react'
 import PurchaseSaleComp from './PurchaseSaleComp';
+import { useFormContext } from 'react-hook-form';
 
 
-const ProductGeneral = ({
-  activeTab,
-  setShowVariantTab,
-  formData,
-  handleChange,
-}) => {
+const ProductGeneral = ({ activeTab, setShowVariantTab, }) => {
+    const { register } = useFormContext();
+
   const [selectedOption, setSelectedOption] = useState("");
   const [selectedOption2, setSelectedOption2] = useState("");
 
@@ -33,7 +31,7 @@ const ProductGeneral = ({
               <div className="flex items-center gap-2">
                 <input
                   type="radio"
-                  name="productType"
+                  {...register("productType")}
                   value="product"
                   checked={selectedOption === "product"}
                   onChange={handleOptionChange}
@@ -44,7 +42,7 @@ const ProductGeneral = ({
               <div className="flex items-center gap-2">
                 <input
                   type="radio"
-                  name="productType"
+                  {...register("productType")}
                   value="services"
                   checked={selectedOption === "services"}
                   onChange={handleOptionChange}
@@ -55,7 +53,7 @@ const ProductGeneral = ({
               <div className="flex items-center gap-2">
                 <input
                   type="radio"
-                  name="productType"
+                  {...register("productType")}
                   value="productVariant"
                   checked={selectedOption === "productVariant"}
                   onChange={handleOptionChange}
@@ -75,9 +73,9 @@ const ProductGeneral = ({
                   </label>
                   <input
                     type="text"
-                    name="code"
-                    value={formData.code}
-                    onChange={handleChange}
+                    {...register("code", { required: true })}
+                    // value={formData.code}
+                    // onChange={handleChange}
                     placeholder="P-202020"
                     className="border p-3 rounded w-full"
                     required
@@ -89,9 +87,9 @@ const ProductGeneral = ({
                   </label>
                   <input
                     type="text"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
+                    {...register("name", { required: true })}
+                    // value={formData.name}
+                    // onChange={handleChange}
                     placeholder="Product Name"
                     className="border p-3 rounded w-full"
                     required
@@ -103,9 +101,9 @@ const ProductGeneral = ({
                     <span className="text-red-500 text-xl">*</span>
                   </label>
                   <select
-                    name="unitOfMeasurement"
-                    value={formData.unitOfMeasurement}
-                    onChange={handleChange}
+                    {...register("unitOfMeasurement", { required: true })}
+                    // value={formData.unitOfMeasurement}
+                    // onChange={handleChange}
                     className="border p-3 rounded w-full"
                     required
                   >
@@ -172,10 +170,7 @@ const ProductGeneral = ({
                   <option value="">Inventory2</option>
                 </select>
               </div>
-              <PurchaseSaleComp
-                formData={formData}
-                handleChange={handleChange}
-              />
+              <PurchaseSaleComp />
             </div>
           </div>
         )}

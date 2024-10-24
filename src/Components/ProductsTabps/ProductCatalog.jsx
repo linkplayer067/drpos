@@ -1,24 +1,21 @@
 import React, { useEffect, useRef, useState } from "react";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
-// import "./Editor.css"; // Import custom styles for the editor
 
 const MyEditor = ({ activeTab }) => {
-//   const [editorHtml, setEditorHtml] = useState("");
   const [isLinkModalOpen, setIsLinkModalOpen] = useState(false);
   const [isImageModalOpen, setIsImageModalOpen] = useState(false);
-  const [galleryImage, setGalleryImage] = useState(null); // For gallery images
+  const [galleryImage, setGalleryImage] = useState(null); 
  const quillRef = useRef(null);
-  // Handle file change for gallery image
   const handleGalleryImageChange = (event) => {
     setGalleryImage(URL.createObjectURL(event.target.files[0]));
   };
 
    const getEditorValue = () => {
-     const editor = quillRef.current.getEditor(); // Get the Quill instance
-     const editorContent = editor.getContents(); // Get the content as Quill Delta format
-     const editorText = editor.getText(); // Get content as plain text
-     const editorHTML = editor.root.innerHTML; // Get the content as HTML
+     const editor = quillRef.current.getEditor(); 
+     const editorContent = editor.getContents(); 
+     const editorText = editor.getText();
+     const editorHTML = editor.root.innerHTML; 
 
      console.log("Editor Content (Delta):", editorContent);
      console.log("Editor Text (Plain):", editorText);
@@ -40,13 +37,13 @@ const MyEditor = ({ activeTab }) => {
             modules={{
               toolbar: {
                 container: [
-                  [{ font: [] }, { size: [] }], // Font and size
-                  ["bold", "italic", "underline", "strike", "blockquote"], // Bold, italic, underline, etc.
-                  [{ list: "ordered" }, { list: "bullet" }], // Lists
-                  [{ align: [] }], // Text alignment
-                  ["link", "image"], // Link and image
-                  [{ color: [] }, { background: [] }], // Text color and background color
-                  ["clean"], // Remove formatting
+                  [{ font: [] }, { size: [] }], 
+                  ["bold", "italic", "underline", "strike", "blockquote"], 
+                  [{ list: "ordered" }, { list: "bullet" }], 
+                  [{ align: [] }], 
+                  ["link", "image"], 
+                  [{ color: [] }, { background: [] }], 
+                  ["clean"], 
                 ],
                 handlers: {
                   link: () => setIsLinkModalOpen(true),

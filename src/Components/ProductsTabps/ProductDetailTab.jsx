@@ -1,6 +1,9 @@
 import React from "react";
+import { useFormContext } from "react-hook-form";
 
-const ProductDetailTab = ({ formData, handleChange, activeTab }) => {
+const ProductDetailTab = ({ activeTab }) => {
+      const { register } = useFormContext();
+
   return (
     <div className="p-8">
       {activeTab === "Detail" && (
@@ -10,9 +13,9 @@ const ProductDetailTab = ({ formData, handleChange, activeTab }) => {
             <div>
               <label className="block mb-2">Product Category</label>
               <select
-                name="productCategorydetail"
-                value={formData.productCategorydetail}
-                onChange={handleChange}
+                {...register("productCategorydetail")}
+                // value={formData.productCategorydetail}
+                // onChange={handleChange}
                 className="border p-3 rounded w-full"
               >
                 <option value="">Type to search product category</option>
@@ -23,9 +26,9 @@ const ProductDetailTab = ({ formData, handleChange, activeTab }) => {
             <div>
               <label className="block mb-2">Principal</label>
               <select
-                name="principal"
-                value={formData.principal}
-                onChange={handleChange}
+                {...register("principal")}
+                // value={formData.principal}
+                // onChange={handleChange}
                 className="border p-3 rounded w-full"
               >
                 <option value="">Type to search principal</option>
@@ -37,9 +40,9 @@ const ProductDetailTab = ({ formData, handleChange, activeTab }) => {
               <label className="block mb-2">Product Short Name</label>
               <input
                 type="text"
-                name="productShortName"
-                value={formData.productShortName}
-                onChange={handleChange}
+                {...register("productShortName")}
+                // value={formData.productShortName}
+                // onChange={handleChange}
                 placeholder="Product Short Name"
                 className="border p-3 rounded w-full"
               />
@@ -52,9 +55,9 @@ const ProductDetailTab = ({ formData, handleChange, activeTab }) => {
               <label className="block mb-2">SKU</label>
               <input
                 type="text"
-                name="sku"
-                value={formData.sku}
-                onChange={handleChange}
+                {...register("sku")}
+                // value={formData.sku}
+                // onChange={handleChange}
                 placeholder="SKU"
                 className="border p-3 rounded w-full"
               />
@@ -65,9 +68,9 @@ const ProductDetailTab = ({ formData, handleChange, activeTab }) => {
               <label className="block mb-2">Product Barcode</label>
               <input
                 type="text"
-                name="productBarcode"
-                value={formData.productBarcode}
-                onChange={handleChange}
+                {...register("productBarcode")}
+                // value={formData.productBarcode}
+                // onChange={handleChange}
                 placeholder="Product Barcode"
                 className="border p-3 rounded w-full"
               />
@@ -77,9 +80,9 @@ const ProductDetailTab = ({ formData, handleChange, activeTab }) => {
             <div>
               <label className="block mb-2">Brand</label>
               <select
-                name="brand"
-                value={formData.branddetail}
-                onChange={handleChange}
+                {...register("brand")}
+                // value={formData.branddetail}
+                // onChange={handleChange}
                 className="border p-3 rounded w-full"
               >
                 <option value="">Type to search brand</option>
@@ -90,9 +93,9 @@ const ProductDetailTab = ({ formData, handleChange, activeTab }) => {
             <div>
               <label className="block mb-2">HS Code</label>
               <select
-                name="hsCode"
-                value={formData.hsCode}
-                onChange={handleChange}
+                {...register("hsCode")}
+                // value={formData.hsCode}
+                // onChange={handleChange}
                 className="border p-3 rounded w-full"
               >
                 <option value="">Type to search HS Code</option>
@@ -107,9 +110,10 @@ const ProductDetailTab = ({ formData, handleChange, activeTab }) => {
               </label>
               <input
                 type="text"
+                {...register("weight")}
                 name="weight"
-                value={formData.weight}
-                onChange={handleChange}
+                // value={formData.weight}
+                // onChange={handleChange}
                 placeholder="Weight"
                 className="border p-3 rounded w-full"
               />
@@ -125,9 +129,9 @@ const ProductDetailTab = ({ formData, handleChange, activeTab }) => {
               </label>
               <input
                 type="text"
-                name="height"
-                value={formData.height}
-                onChange={handleChange}
+                {...register("height")}
+                // value={formData.height}
+                // onChange={handleChange}
                 placeholder="Height"
                 className="border p-3 rounded w-full"
               />
@@ -143,9 +147,9 @@ const ProductDetailTab = ({ formData, handleChange, activeTab }) => {
               </label>
               <input
                 type="text"
-                name="length"
-                value={formData.length}
-                onChange={handleChange}
+                {...register("length")}
+                // value={formData.length}
+                // onChange={handleChange}
                 placeholder="Length"
                 className="border p-3 rounded w-full"
               />
@@ -161,9 +165,9 @@ const ProductDetailTab = ({ formData, handleChange, activeTab }) => {
               </label>
               <input
                 type="text"
-                name="width"
-                value={formData.width}
-                onChange={handleChange}
+                {...register("width")}
+                // value={formData.width}
+                // onChange={handleChange}
                 placeholder="Width"
                 className="border p-3 rounded w-full"
               />
@@ -174,9 +178,9 @@ const ProductDetailTab = ({ formData, handleChange, activeTab }) => {
               <label className="block mb-2">Model Number</label>
               <input
                 type="text"
-                name="modelNumber"
-                value={formData.modelNumber}
-                onChange={handleChange}
+                {...register("modelNumber")}
+                // value={formData.modelNumber}
+                // onChange={handleChange}
                 placeholder="Product Model Number"
                 className="border p-3 rounded w-full"
               />
@@ -186,9 +190,9 @@ const ProductDetailTab = ({ formData, handleChange, activeTab }) => {
             <div>
               <label className="block mb-2">Short Description</label>
               <textarea
-                name="shortDescription"
-                value={formData.shortDescription}
-                onChange={handleChange}
+                {...register("shortDescription")}
+                // value={formData.shortDescription}
+                // onChange={handleChange}
                 placeholder="Short Description"
                 className="border p-3 rounded w-full"
               ></textarea>
@@ -198,9 +202,9 @@ const ProductDetailTab = ({ formData, handleChange, activeTab }) => {
             <div>
               <label className="block mb-2">Description</label>
               <textarea
-                name="description"
-                value={formData.description}
-                onChange={handleChange}
+                {...register("description")}
+                // value={formData.description}
+                // onChange={handleChange}
                 placeholder="Description"
                 className="border p-3 rounded w-full"
               ></textarea>
@@ -213,7 +217,7 @@ const ProductDetailTab = ({ formData, handleChange, activeTab }) => {
               </p>
               <input
                 type="file"
-                name="productImage"
+                {...register("productImage")}
                 accept="image/*"
                 className="hidden"
                 id="image-upload"

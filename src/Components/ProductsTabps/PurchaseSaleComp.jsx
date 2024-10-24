@@ -1,7 +1,10 @@
 import React from 'react'
 import { FaRegEdit } from "react-icons/fa";
+import { useFormContext } from "react-hook-form";
 
-const PurchaseSaleComp = ({ formData, handleChange }) => {
+const PurchaseSaleComp = () => {
+      const { register } = useFormContext();
+
   return (
     <div>
       <div className="flex items-center gap-2">
@@ -16,22 +19,20 @@ const PurchaseSaleComp = ({ formData, handleChange }) => {
           </label>
           <input
             type="text"
-            name="salePrice"
-            value={formData.salePrice}
-            onChange={handleChange}
+            {...register("salePrice", { required: true })}
+            // value={formData.salePrice}
+            // onChange={handleChange}
             placeholder="P-202020"
             className="border p-3 rounded w-full"
-            required
           />
         </div>
         <div>
           <label className="block mb-2">Expense Account</label>
           <select
-            name="productCategory"
-            value={formData.productCategory}
-            onChange={handleChange}
+            {...register("productCategory", { required: true })}
+            // value={formData.productCategory}
+            // onChange={handleChange}
             className="border p-3.5 rounded w-full"
-            required
           >
             <option value="">Cost of Goods Sold</option>
             <option value="Electronics">Electronics</option>
@@ -42,11 +43,11 @@ const PurchaseSaleComp = ({ formData, handleChange }) => {
         <div>
           <label className="block mb-2">Purchase Discount Account</label>
           <select
-            name="brand"
-            value={formData.brand}
-            onChange={handleChange}
+            {...register("brand", { required: true })}
+            // value={formData.brand}
+            // onChange={handleChange}
             className="border p-3.5 rounded w-full"
-            required
+            // required
           >
             <option value="">Discounts Received</option>
             <option value="Brand A">Brand A</option>
@@ -76,22 +77,22 @@ const PurchaseSaleComp = ({ formData, handleChange }) => {
           </label>
           <input
             type="text"
-            name="salePrice"
-            value={formData.salePrice}
-            onChange={handleChange}
+            {...register("salePrice", { required: true })}
+            // value={formData.salePrice}
+            // onChange={handleChange}
             placeholder="Sale Price"
             className="border p-3 rounded w-full"
-            required
+            // required
           />
         </div>
         <div>
           <label className="block mb-2">Sales Account</label>
           <select
-            name="productCategory"
-            value={formData.productCategory}
-            onChange={handleChange}
+            {...register("productCategory", { required: true })}
+            // value={formData.productCategory}
+            // onChange={handleChange}
             className="border p-3.5 rounded w-full"
-            required
+            // required
           >
             <option value="">Sales </option>
             <option value="Electronics">Sales Account</option>
@@ -103,10 +104,11 @@ const PurchaseSaleComp = ({ formData, handleChange }) => {
           <label className="block mb-2">Sales Discount Account</label>
           <select
             name="brand"
-            value={formData.brand}
-            onChange={handleChange}
+            {...register("brand", { required: true })}
+            // value={formData.brand}
+            // onChange={handleChange}
             className="border p-3.5 rounded w-full"
-            required
+            // required
           >
             <option value=""> Discount Given </option>
             <option value="Brand A">Discount Given A</option>
@@ -131,22 +133,23 @@ const PurchaseSaleComp = ({ formData, handleChange }) => {
           <input
             type="text"
             name="salePrice"
-            value={formData.salePrice}
-            onChange={handleChange}
+            {...register("salePrice", { required: true })}
+            // value={formData.salePrice}
+            // onChange={handleChange}
             placeholder="Retail Price"
             className="border p-3 rounded w-full"
-            required
+            // required
           />
         </div>
 
         <div>
           <label className="block mb-2">Sales Return Account</label>
           <select
-            name="productCategory"
-            value={formData.productCategory}
-            onChange={handleChange}
+            {...register("productCategory", { required: true })}
+            // value={formData.productCategory}
+            // onChange={handleChange}
             className="border p-3.5 rounded w-full"
-            required
+            // required
           >
             <option value="">Sales Return </option>
             <option value="Electronics">Sales Account</option>
@@ -173,8 +176,8 @@ const PurchaseSaleComp = ({ formData, handleChange }) => {
       </div>
       <div className="mt-6">
         <p className="border-t-2 pt-10 text-lg text-gray-800">
-          To <span className='font-bold'>add product openings</span> , please create a Stock
-          Adjustment and select adjustment type 'Openings'.
+          To <span className="font-bold">add product openings</span> , please
+          create a Stock Adjustment and select adjustment type 'Openings'.
         </p>
       </div>
     </div>

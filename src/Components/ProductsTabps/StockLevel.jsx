@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import { FaEdit, FaTrash, FaCheck, FaTimes } from "react-icons/fa";
+import { useFormContext } from "react-hook-form";
 
-const StockLevel = ({ activeTab }) => {
+  const StockLevel = ({ activeTab }) => {
   const [warehouse, setWarehouse] = useState("");
   const [minStock, setMinStock] = useState("");
   const [isEditing, setIsEditing] = useState(false);
   const [editingIndex, setEditingIndex] = useState(null);
   const [products, setProducts] = useState([]);
+          const { register } = useFormContext();
 
   const handleAdd = () => {
     if (warehouse && minStock !== "") {
@@ -105,6 +107,7 @@ const StockLevel = ({ activeTab }) => {
               ))}
               <div className="flex-1 border-r-2 relative">
                 <select
+                  {...register("wearhouses")}
                   value={warehouse}
                   onChange={handleWarehouseChange}
                   className="w-[95%] border p-2.5 rounded-md mt-5 mx-4 mb-4"
@@ -134,6 +137,7 @@ const StockLevel = ({ activeTab }) => {
               <div className="flex-1 border-r-2 relative">
                 <input
                   type="text"
+                  {...register("minstocks")}
                   value={minStock}
                   onChange={handleMinStockChange}
                   placeholder="Enter stock level"
@@ -171,10 +175,14 @@ const StockLevel = ({ activeTab }) => {
 
               {/* Check and Cross Buttons Below the List */}
               <div className="flex justify-end items-center gap-3 mt-6 pb-6">
-                <button onClick={handleAdd} className="text-green-500 ">
+                <button
+                  onClick={handleAdd}
+                  {...register("addstocks")}
+                  className="text-green-500 "
+                >
                   <FaCheck className="lg:text-2xl md:2xl sm:xl  " />
                 </button>
-                <button onClick={handleCancel} className="text-red-500 ">
+                <button onClick={handleCancel}  className="text-red-500 ">
                   <FaTimes className="lg:text-2xl md:2xl sm:xl mr-6  " />
                 </button>
               </div>
