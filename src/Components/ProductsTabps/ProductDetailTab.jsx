@@ -2,7 +2,7 @@ import React from "react";
 
 const ProductDetailTab = ({ formData, handleChange, activeTab }) => {
   return (
-    <div className="p-6">
+    <div className="p-8">
       {activeTab === "Detail" && (
         <div className="flex justify-between gap-10 flex-wrap	 ">
           <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-6 w-4/5		">

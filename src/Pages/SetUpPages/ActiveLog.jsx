@@ -39,11 +39,11 @@ const ActiveLog = ({isOpen}) => {
           className={`transition-all mt-10  duration-300 bg-white p-6 shadow-2xl flex-grow 
           ${isOpen ? "ml-96" : "ml-28 mr-10 "} w-full`}
         >
-          <div className="flex justify-between items-center mb-4">
+          <div className="flex flex-wrap gap-4 justify-between items-center mb-4">
             <h1 className="text-xl font-bold">Activity Log</h1>
             <button
               onClick={toggleLogs}
-              className=" flex gap-1 justify-center bg-blue-600 text-white py-3 font-bold text-xl items-center rounded-lg w-32 hover:bg-blue-400 transition"
+              className=" flex gap-1 justify-center bg-blue-600 text-white py-3 font-bold  text-xl items-center rounded-lg w-32 hover:bg-blue-400 transition"
             >
               {showLogs ? (
                 <AiOutlineMinus className="font-bold text-white text-2xl" />

@@ -86,9 +86,9 @@ const StockLevel = ({ activeTab }) => {
   };
 
   return (
-    <div>
+    <div className="px-6">
       {activeTab === "Stock Level" && (
-        <div className="w-full mx-auto border-2 bg-white">
+        <div className="w-full mx-auto border-2 bg-white ">
           <div className="grid grid-cols-1 lg:grid-cols-12">
             {/* Warehouse Section */}
             <div className="col-span-12 lg:col-span-5">
@@ -137,7 +137,7 @@ const StockLevel = ({ activeTab }) => {
                   value={minStock}
                   onChange={handleMinStockChange}
                   placeholder="Enter stock level"
-                  className="w-full border p-2 rounded-md mx-3 mt-5 w-[94.8%] mb-4"
+                  className=" border p-2 rounded-md mx-3 mt-5 w-[94.8%] mb-4"
                 />
               </div>
             </div>
@@ -171,16 +171,10 @@ const StockLevel = ({ activeTab }) => {
 
               {/* Check and Cross Buttons Below the List */}
               <div className="flex justify-end items-center gap-3 mt-6 pb-6">
-                <button
-                  onClick={handleAdd}
-                  className="text-green-500 "
-                >
+                <button onClick={handleAdd} className="text-green-500 ">
                   <FaCheck className="lg:text-2xl md:2xl sm:xl  " />
                 </button>
-                <button
-                  onClick={handleCancel}
-                  className="text-red-500 "
-                >
+                <button onClick={handleCancel} className="text-red-500 ">
                   <FaTimes className="lg:text-2xl md:2xl sm:xl mr-6  " />
                 </button>
               </div>

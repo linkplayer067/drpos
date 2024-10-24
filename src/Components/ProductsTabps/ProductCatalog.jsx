@@ -28,7 +28,7 @@ const MyEditor = ({ activeTab }) => {
   return (
     <div>
       {activeTab === "Catalog" && (
-        <div className="container mx-auto mt-10 p-4">
+        <div className="container mx-auto  p-4">
           <h1 className="text-2xl font-bold mb-6">
             Responsive Rich Text Editor
           </h1>

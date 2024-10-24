@@ -51,23 +51,23 @@ const [formData, setFormData] = useState({
   };
 
   return (
-    <div>
+    <div className="">
       <div
-        className={` relative flex min-h-screen ${
+        className={`  relative flex min-h-screen ${
           isOpen ? "fixed right-10" : "right-0"
         }`}
       >
         <div
-          className={`transition-all mt-10  duration-300 bg-white p-6 shadow-2xl flex-grow 
+          className={`  transition-all mt-10  duration-300 bg-white  shadow-2xl flex-grow 
           ${isOpen ? "ml-96" : "ml-28 mr-10 "} w-full`}
         >
-          <h1 className="text-2xl font-bold mb-6">Products - Add</h1>
+          <h1 className="text-2xl font-bold mb-6 px-6 pt-6 ">Products - Add</h1>
           <form onSubmit={handleSubmit}>
             {/* Tabs */}
-            <div className="flex gap-6 flex-wrap	 border-b-2 mb-6">
+            <div className="flex gap-6 flex-wrap	border-b-2 px-6 ">
               <button
                 type="button"
-                className={`px-4 py-2 focus:outline-none text-xl font-bold ${
+                className={`px-4 py-4 focus:outline-none text-xl font-bold ${
                   activeTab === "General"
                     ? "border-b-4 border-green-500 "
                     : "text-gray-400"
@@ -79,7 +79,7 @@ const [formData, setFormData] = useState({
 
               <button
                 type="button"
-                className={`px-4 py-2 focus:outline-none text-xl font-bold ${
+                className={`px-4 py-4 focus:outline-none text-xl font-bold ${
                   activeTab === "Detail"
                     ? "border-b-4 border-green-500"
                     : "text-gray-400"
@@ -90,7 +90,7 @@ const [formData, setFormData] = useState({
               </button>
               <button
                 type="button"
-                className={`px-4 py-2 focus:outline-none text-xl font-bold ${
+                className={`px-4 py-4 focus:outline-none text-xl font-bold ${
                   activeTab === "Custom Fields"
                     ? "border-b-4 border-green-500"
                     : "text-gray-400"
@@ -101,7 +101,7 @@ const [formData, setFormData] = useState({
               </button>
               <button
                 type="button"
-                className={`px-4 py-2 focus:outline-none text-xl font-bold ${
+                className={`px-4 py-4 focus:outline-none text-xl font-bold ${
                   activeTab === "Multiple Packings/SKUs"
                     ? "border-b-4 border-green-500"
                     : "text-gray-400"
@@ -112,7 +112,7 @@ const [formData, setFormData] = useState({
               </button>
               <button
                 type="button"
-                className={`px-4 py-2 focus:outline-none text-xl font-bold ${
+                className={`px-4 py-4 focus:outline-none text-xl font-bold ${
                   activeTab === "Catalog"
                     ? "border-b-4 border-green-500"
                     : "text-gray-400"
@@ -123,7 +123,7 @@ const [formData, setFormData] = useState({
               </button>
               <button
                 type="button"
-                className={`px-4 py-2 focus:outline-none text-xl font-bold ${
+                className={`px-4 py-4 focus:outline-none text-xl font-bold ${
                   activeTab === "Stock Level"
                     ? "border-b-4 border-green-500"
                     : "text-gray-400"
@@ -136,7 +136,7 @@ const [formData, setFormData] = useState({
               {showVariantTab && (
                 <button
                   type="button"
-                  className={`px-4 py-2 focus:outline-none text-xl font-bold ${
+                  className={`px-4 py-4 focus:outline-none text-xl font-bold ${
                     activeTab === "Product Variant"
                       ? "border-b-4 border-green-500"
                       : "text-gray-400"
@@ -148,7 +148,7 @@ const [formData, setFormData] = useState({
               )}
               <button
                 type="button"
-                className={`px-4 py-2 focus:outline-none text-xl font-bold ${
+                className={`px-4 py-4 focus:outline-none text-xl font-bold ${
                   activeTab === "Taxes"
                     ? "border-b-4 border-green-500"
                     : "text-gray-400"
@@ -174,29 +174,29 @@ const [formData, setFormData] = useState({
               activeTab={activeTab}
             />
             {/* Custom Fields Tab */}
-            <div>
+            <div className="px-6 ">
               {activeTab === "Custom Fields" && (
-                <div className="shadow-xl rounded-lg  bg-white w-full max-w-2xl	">
-                  <h1 className="text-2xl px-6 pt-4 text-gray-600 font-bold border-b-2 pb-6">
+                <div className="shadow-xl rounded-lg  bg-white w-full max-w-2xl border	">
+                  <h1 className="text-2xl px-6 pt-4 text-gray-600 font-bold border-b-4 pb-6">
                     Add Fields
                   </h1>
 
-                  <div className="border-b-2 pb-10">
+                  <div className="border-b-4 pb-10">
                     <p className="pt-8 text-xl px-6">
                       Field <span className="text-red-500">*</span>
                     </p>
                     <select className="w-full max-w-72 mx-6 mt-3	 border-4 py-3 px-5 rounded-lg">
                       <option>-Chose-</option>
-                      <option>-Chose-2</option>
+                      <option>-Chose-4</option>
                       <option>-Chose-3</option>
                     </select>
                   </div>
                   <div className="flex itmes-center justify-end gap-4 mr-8 mt-6 pb-6">
-                    <button className="bg-gray-400 text-white text-lg px-6 py-3 rounded flex items-center gap-2 ">
+                    <button className="bg-gray-400 text-white text-lg px-6 py-3 rounded flex items-center gap-4 ">
                       <FaPlus className="text-xl font-bold" />
                       ADD
                     </button>
-                    <button className="bg-orange-500 text-white text-lg px-6 py-3 rounded flex items-center gap-2 ">
+                    <button className="bg-orange-500 text-white text-lg px-6 py-3 rounded flex items-center gap-4 ">
                       <IoClose className="text-xl font-bold" />
                       CLOSE
                     </button>
@@ -223,15 +223,15 @@ const [formData, setFormData] = useState({
             <Taxes activeTab={activeTab} />
 
             {/* Submit Button */}
-            <div className=" flex items-center gap-6 justify-end border-t-2 pt-8 mt-12">
+            <div className=" flex flex-wrap	 items-center gap-6 justify-end border-t-4 pt-8 pb-10 pr-10 mt-12">
               <button
                 type="submit"
-                className="bg-green-500 text-white text-lg px-6 py-3 rounded flex items-center gap-2"
+                className="bg-green-500 text-white text-lg px-6 py-3 rounded flex items-center gap-4"
               >
                 <IoDocumentTextOutline className="text-xl" />
                 SAVE AND CLOSE
               </button>
-              <button className="bg-orange-500 text-white text-lg px-6 py-3 rounded flex items-center gap-2 ">
+              <button className="bg-orange-500 text-white text-lg px-6 py-3 rounded flex items-center gap-4 ">
                 <IoClose className="text-xl font-bold" />
                 CLOSE
               </button>
